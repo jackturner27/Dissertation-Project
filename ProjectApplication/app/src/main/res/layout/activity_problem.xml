@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ProblemActivity">
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="start"
+        android:padding="5dp"
+        android:text=" Score: 100"
+        android:textAppearance="@style/problemText"
+        android:textColor="@color/score"
+        app:layout_constraintBottom_toTopOf="@id/vlayout"
+        app:layout_constraintEnd_toStartOf="@id/tvHighestScore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHighestScore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="start"
+        android:padding="5dp"
+        android:text="Highest Score: 100"
+        android:textAppearance="@style/problemText"
+        android:textColor="@color/score"
+        app:layout_constraintBottom_toTopOf="@id/vlayout"
+        app:layout_constraintEnd_toStartOf="@id/sidebarLayout"
+        app:layout_constraintStart_toEndOf="@+id/tvScore"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sidebarLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vlayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:onClick="back"
+            android:text="Back"
+            android:textAppearance="@style/buttonText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnSkip"
+            app:layout_constraintTop_toBottomOf="@id/btnSubmit"
+            app:layout_constraintVertical_bias="0.983" />
+
+        <Button
+            android:id="@+id/btnSkip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="skip"
+            android:text="Skip"
+            android:textAppearance="@style/buttonText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSubmit"
+            app:layout_constraintVertical_bias="0.983" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@android:style/Widget.Material.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:onClick="submit"
+            android:text="Submit"
+            android:textAppearance="@style/buttonText"
+            app:layout_constraintBottom_toTopOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/blockLayout" />
+
+        <Button
+            android:id="@+id/btnViewProblem"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:onClick="viewProblem"
+            android:text="View Problem"
+            android:textAppearance="@style/buttonText"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/blockLayout"
+            app:layout_constraintEnd_toStartOf="@id/btnHint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnHint"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:onClick="giveHint"
+            android:text="Hint (1)"
+            android:textAppearance="@style/buttonText"
+            app:layout_constraintBottom_toTopOf="@id/blockLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnViewProblem"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.06" />
+
+        <TextView
+            android:id="@+id/blockreturn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@style/problemText"
+            app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnViewProblem" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/blockLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@id/blockreturn"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnViewProblem">
+
+            <TextView
+                android:id="@+id/block0"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBlocks"
+                android:gravity="center"
+                android:text="a"
+                android:textAppearance="@style/problemText"
+                app:layout_constraintBottom_toTopOf="@+id/block1"
+                app:layout_constraintEnd_toStartOf="@+id/block4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/block4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBlocks"
+                android:gravity="center"
+                android:text="e"
+                android:textAppearance="@style/problemText"
+                app:layout_constraintBottom_toTopOf="@+id/block5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/block0"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/block1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBlocks"
+                android:gravity="center"
+                android:text="b"
+                android:textAppearance="@style/problemText"
+                app:layout_constraintBottom_toTopOf="@+id/block2"
+                app:layout_constraintEnd_toStartOf="@+id/block5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/block0" />
+
+            <TextView
+                android:id="@+id/block5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBlocks"
+                android:gravity="center"
+                android:text="f"
+                android:textAppearance="@style/problemText"
+                app:layout_constraintBottom_toTopOf="@+id/block6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/block1"
+                app:layout_constraintTop_toBottomOf="@+id/block4" />
+
+            <TextView
+                android:id="@+id/block2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBlocks"
+                android:gravity="center"
+                android:text="c"
+                android:textAppearance="@style/problemText"
+                app:layout_constraintBottom_toTopOf="@+id/block3"
+                app:layout_constraintEnd_toStartOf="@+id/block6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/block1" />
+
+            <TextView
+                android:id="@+id/block6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBlocks"
+                android:gravity="center"
+                android:text="g"
+                android:textAppearance="@style/problemText"
+                app:layout_constraintBottom_toTopOf="@+id/block7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/block2"
+                app:layout_constraintTop_toBottomOf="@+id/block5" />
+
+            <TextView
+                android:id="@+id/block3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBlocks"
+                android:gravity="center"
+                android:text="d"
+                android:textAppearance="@style/problemText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/block7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/block2"
+                app:layout_constraintVertical_bias="0.651" />
+
+            <TextView
+                android:id="@+id/block7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorBlocks"
+                android:gravity="center"
+                android:text="h"
+                android:textAppearance="@style/problemText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/block3"
+                app:layout_constraintTop_toBottomOf="@+id/block6" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/vlayout"
+        android:layout_width="450dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sidebarLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvScore">
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

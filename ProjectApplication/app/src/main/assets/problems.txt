@@ -1,0 +1,54 @@
+Drag Blocks into their correct position on the algorithm. Expected output from x = 25.
+LOOPS
+int,++,5,x
+x`VAR,5`CON,--`OP,int`DT,String`DT,1`CON,++`OP,boolean`DT
+7
+public int addTo25() {
+    ,`DT, x = 0;
+    for (int i = 0; i < 5; i,`OP,) {
+         x += ,`CON,;
+        }
+    return ,`VAR,;
+}
+isEven should return true if number is even, or false if it is odd.
+IF
+2,true,false
+2`CON,true`CON,3`CON,false`CON
+7
+public boolean isEven(int number) {
+    if(number % ,`CON, == 0) {
+        return ,`CON,;
+    } else {
+        return ,`CON,;
+    }
+}
+findIndex should search through a list and return the index of first found term otherwise return -1
+LOOPS,IF
+int,0,i
+int`DT,Boolean`DT,0`CON,j`VAR,1`CON,i`VAR,String`DT,2`CON
+8
+public ,`DT, findIndex (String searchTerm) {
+    for(int i = ,`CON,; i < list.length(); i++) {
+        if(list[i] == searchTerm) {
+            return ,`VAR,;
+        }
+    return -1;
+    }
+}
+multiplyBy5 should multiply its integer input by 5 then output the new value
+
+x,5
+4`CON,5`CON,z`VAR,x`VAR
+4
+public integer multiplyBy5 (int x) {
+    ,`VAR, = x * ,`CON,;
+    return x;
+}
+isHighScore returns true if newScore is a greater value than highScore
+IF
+newScore,>,highScore
+newScore`VAR,highScore`VAR,>`OP,==`OP
+3
+public boolean isHScore(int nScore, int hScore) {
+    return ,`VAR,  ,`OP,  ,`VAR,;
+}

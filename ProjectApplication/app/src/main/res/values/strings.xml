@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Project Application</string>
+    <string name="slotcode">*slot*</string>
+    <string name="star">\u2605</string>
+</resources>

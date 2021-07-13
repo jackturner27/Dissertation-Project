@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#073B4C</color>
+    <color name="colorPrimaryDark">#052E3B</color>
+    <color name="colorAccent">#282C34</color>
+    <color name="colorBlocks">#EF476F</color>
+    <color name="score">#FFD166</color>
+    <color name="colorSlots">#118AB2</color>
+    <color name="layoutBackground">#282C34</color>
+    <color name="problemText">#FFFFFF</color>
+    <color name="buttonText">#000000</color>
+    <color name="correctText">#06D6A0</color>
+    <color name="disabledButton">#B5B5B5</color>
+    <color name="goldstar">#FFDF00</color>
+</resources>
